@@ -1,12 +1,14 @@
 version: '2'
 services:
   dockerapp:
-    # build: .
+    extends:
+      file: common.yml
+      service: dockerapp
     image: wendysanarwanto/dockerapp
-    ports:
-      - "5000:5000"
     # volumes:
     #   - ./app:/app
 
   redis:
-    image: redis:3.2.0
+    extends:
+      file: common.yml
+      service: redis
